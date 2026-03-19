@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE Tech Fest 2026 | Innovate, Build, Connect</title>
+
+    <!-- Meta description for SEO -->
+    <meta name="description"
+        content="Join the ECE Tech Fest 2026. Browse and register for cutting-edge workshops in IoT, VLSI, Robotics, and PCB Designing.">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts: Inter for UI text and Share Tech Mono for technological styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Orbitron:wght@900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <nav class="container nav-content">
+            <a href="#" class="logo">EAR<span>NEST</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#workshops">Workshops</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Global Dynamic Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+
+    <!-- 3D Interactive Intro Overlay -->
+    <div id="hero-overlay">
+        <canvas id="intro-3d-canvas"></canvas>
+        <div id="intro-logo-container">
+            <img src="images/earnest-logo.png" alt="EARNEST Logo" id="intro-top-logo">
+        </div>
+        <div id="enter-prompt" class="modern-prompt">CLICK OR SWIPE TO ENTER WARP<span class="prompt-cursor">_</span></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+
+        <div class="container hero-container">
+            <div class="hero-content glass-panel staggered-reveal">
+                <div class="hero-dates reveal-item">MARCH 22 & 23, 2026</div>
+                <h1 class="hero-title reveal-item">EARNEST</h1>
+                <p class="hero-description reveal-item">
+                    Welcome to the ultimate convergence of technology and creativity. Join the Electronics and
+                    Communication Engineering department for three days of hands-on learning, competitions, and building
+                    the future.
+                </p>
+                <div class="hero-actions reveal-item">
+                    <a href="#workshops" class="btn btn-primary btn-glow">Explore Workshops</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Subtext Area -->
+    <section class="about" id="about">
+        <div class="container section-header">
+            <h2>Empowering Future Engineers</h2>
+            <p>Our department believes in practical, hands-on experience. This tech fest is designed to bridge the gap
+                between theoretical knowledge and industry requirements.</p>
+
+            <div class="stats-grid staggered-reveal">
+                <div class="stat-box reveal-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Hands-on Workshops</div>
+                </div>
+                <div class="stat-box reveal-item">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Expected Participants</div>
+                </div>
+                <div class="stat-box reveal-item">
+                    <div class="stat-number">4k+</div>
+                    <div class="stat-label">Total Prize Pool (₹)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section class="workshops" id="workshops">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Workshops</h2>
+                <p>Register for our specialized sessions and learn from industry experts.</p>
+            </div>
+
+            <div class="workshop-grid">
+                <!-- Workshop 1 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 23 rd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price">₹50</div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/DIY.jpeg" alt="DIY GADGET WORKSHOP">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">DIY GADGET WORKSHOP</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/rN1iwVGysAwp9jB7A" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+
+                <!-- Workshop 2 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 23 rd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price">₹120</div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/PCB.jpeg" alt="PCB DESIGN WORKSHOP Poster">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">PCB DESIGN WORKSHOP</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/4kQ9XdsKGMy4bxo9A" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+
+                <!-- Workshop 3 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 23 rd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price"></div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/CROCHET.jpeg" alt="PCB Designing Poster">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">CROCHET WORKSHOP</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href="https://forms. google.com/" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+                <!-- Workshop 4 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 23 rd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price">₹120</div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/3D.jpeg" alt="3D Printing Poster">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">3D PRINTING WORKSHOP</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/tXJfLeen2D91YKAf9" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+
+                <!-- Workshop 5 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 22 nd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price">₹30</div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/TECH.jpeg" alt="TECH-O-FUN FIESTA Poster"
+                                onerror="this.src='https://via.placeholder.com/400x500/111/999?text=AI+%26+ML'">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">TECH-O-FUN FIESTA</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href=" https://forms.gle/cc9x5JJ6K2WtrQAy7" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+
+                <!-- Workshop 6 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 22 nd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price">₹20</div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/AI-PROMTING.jpeg" alt="AI PROMTING Poster"
+                                onerror="this.src='https://via.placeholder.com/400x500/111/999?text=IOT+%26+ROBOTICS'">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">AI PROMTING</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/FLMqbi4bFVm7o1vH8" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+
+                <!-- Workshop 7 -->
+                <article class="ragam-card">
+                    <div class="ragam-card-top">
+                        <div class="ragam-card-strip">
+                            <div class="ragam-strip-pattern"></div>
+                            <div class="ragam-strip-date">MAR 23 rd</div>
+                            <div class="ragam-strip-slash">/</div>
+                            <div class="ragam-strip-price">₹30</div>
+                        </div>
+                        <div class="ragam-card-poster">
+                            <img src="images/DEBUG.jpeg" alt="DEBUG THE CIRCUIT Poster"
+                                onerror="this.src='https://via.placeholder.com/400x500/111/999?text=DRONE+ASSEMBLY'">
+                        </div>
+                    </div>
+                    <div class="ragam-card-middle">
+                        <div class="ragam-card-info">
+                            <h3 class="ragam-card-title">DEBUG THE CIRCUIT</h3>
+                        </div>
+                        <div class="ragam-card-arrow-box">
+                            <i class="fas fa-arrow-up-right-from-square ragam-card-arrow"></i>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/GouMRjJjJwiDxgFc6" target="_blank" rel="noopener noreferrer"
+                        class="ragam-card-bottom">
+                        <span class="ragam-card-action">Click to Register</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="workshops" id="games">
+        <div class="container">
+            <div class="section-header staggered-reveal">
+                <h2 class="reveal-item">Featured Games</h2>
+                <p class="reveal-item">Step into the arena and compete for glory in our tech-powered gaming events.</p>
+            </div>
+
+            <div class="game-grid">
+                <!-- Game 1 -->
+                <article class="game-card staggered-reveal">
+                    <div class="game-card-visual reveal-item">
+                        <img src="images/BGMI.jpeg" alt="Robo Wars"
+                            onerror="this.src='https://via.placeholder.com/400x500/111/999?text=ROBO+WARS'">
+                        <div class="game-card-overlay"></div>
+                    </div>
+                    <div class="game-card-content reveal-item">
+                        <div class="game-meta">
+                            <span class="game-date"><i class="fas fa-calendar-day"></i> MAR 21</span>
+                            <span class="game-price"><i class="fas fa-ticket-alt"></i> ₹60</span>
+                        </div>
+                        <h3 class="game-title">BGMI TOURNAMENT</h3>
+                        <a href="https://forms.gle/Vz24biUivyeUSGxx8" target="_blank" rel="noopener noreferrer"
+                            class="btn-game">
+                            <span>ENTER THE ARENA</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Game 2 -->
+                <article class="game-card staggered-reveal">
+                    <div class="game-card-visual reveal-item">
+                        <img src="images/MINIIMILTA.jpeg" alt="VR Gaming"
+                            onerror="this.src='https://via.placeholder.com/400x500/111/999?text=VR+GAMING'">
+                        <div class="game-card-overlay"></div>
+                    </div>
+                    <div class="game-card-content reveal-item">
+                        <div class="game-meta">
+                            <span class="game-date"><i class="fas fa-calendar-day"></i> MAR 21</span>
+                            <span class="game-price"><i class="fas fa-ticket-alt"></i> ₹60</span>
+                        </div>
+                        <h3 class="game-title">MINIMILTA TOURNAMENT</h3>
+                        <a href="https://forms.gle/sFXQGEAnLTSLH5obA" target="_blank" rel="noopener noreferrer"
+                            class="btn-game">
+                            <span>ENTER THE ARENA</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Game 3 -->
+                <article class="game-card staggered-reveal">
+                    <div class="game-card-visual reveal-item">
+                        <img src="images/FOOTBALL.jpeg" alt="FIFA Tournament"
+                            onerror="this.src='https://via.placeholder.com/400x500/111/999?text=FIFA+TOURNAMENT'">
+                        <div class="game-card-overlay"></div>
+                    </div>
+                    <div class="game-card-content reveal-item">
+                        <div class="game-meta">
+                            <span class="game-date"><i class="fas fa-calendar-day"></i> MAR 21</span>
+                            <span class="game-price"><i class="fas fa-ticket-alt"></i> ₹40</span>
+                        </div>
+                        <h3 class="game-title">E-FOOTBALL TOURNAMENT</h3>
+                        <a href="https://forms.gle/3gQFAhKBN2HePLzU6" target="_blank" rel="noopener noreferrer"
+                            class="btn-game">
+                            <span>ENTER THE ARENA</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Department of ECE</h3>
+                    <p>COLLEGE OF ENGINEERING PERUMON</p>
+                    <p>KOLLAM, KERALA</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Coordinators</h3>
+                    <p><i class="fas fa-user"></i> ADHIN</p>
+                    <p><i class="fas fa-phone"></i>+91 9188808072</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <p>Stay updated on our latest announcements and event details.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/earnest.cep?igsh=cHI5Y2l5cmxkY3hq"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ECE Department Tech Fest. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modern 3D & Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
