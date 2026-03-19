@@ -43,15 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
         textCanvas.height = tHeight;
         
         tCtx.fillStyle = '#ffffff';
-        // Using a bold, impactful font
-        tCtx.font = 'bold 140px "Orbitron", "Share Tech Mono", sans-serif';
+        // Use a slightly smaller font on mobile to ensure perfect padding from screen edges
+        const fontSize = isMobile ? '115px' : '140px';
+        tCtx.font = `bold ${fontSize} "Orbitron", "Share Tech Mono", sans-serif`;
         tCtx.textAlign = 'center';
         tCtx.textBaseline = 'middle';
         
         if (isMobile) {
             // Split "EARNEST" into 2 lines for mobile
-            tCtx.fillText('EARN', tWidth / 2, tHeight / 2 - 65);
-            tCtx.fillText('EST', tWidth / 2, tHeight / 2 + 65);
+            tCtx.fillText('EARN', tWidth / 2, tHeight / 2 - 55);
+            tCtx.fillText('EST', tWidth / 2, tHeight / 2 + 55);
         } else {
             tCtx.fillText('EARNEST', tWidth / 2, tHeight / 2);
         }
@@ -119,10 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let mouseX = 0;
         let mouseY = 0;
         let isWarping = false;
+        let hasInteracted = false;
         
         // Track mouse/touch normalized (-1 to 1) for parallax
         const handleMove = (x, y) => {
             if (isWarping) return;
+            hasInteracted = true;
             mouseX = (x / window.innerWidth) * 2 - 1;
             mouseY = -(y / window.innerHeight) * 2 + 1;
             
@@ -182,7 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     const influenceRadius = 120;
                     
-                    if (dist < influenceRadius) {
+                    // Only apply repulsion if user has interacted, otherwise the (0,0) default blasts a hole in the center!
+                    if (hasInteracted && dist < influenceRadius) {
                         // Repel outwards and slightly towards camera
                         const force = (influenceRadius - dist) / influenceRadius;
                         px += (dx / dist) * force * 4;
@@ -275,8 +279,9 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.addEventListener('wheel', (e) => { if (Math.abs(e.deltaY) > 10) exitIntro(); }, { passive: true });
         
         let touchStartY = 0;
-        overlay.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+        overlay.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; hasInteracted = true; }, { passive: true });
         overlay.addEventListener('touchmove', (e) => {
+            hasInteracted = true;
             if (Math.abs(touchStartY - e.touches[0].clientY) > 30) {
                 exitIntro();
             }
