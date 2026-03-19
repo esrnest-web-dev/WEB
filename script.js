@@ -12,17 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if Three.js is loaded
     if (typeof THREE !== 'undefined' && canvas3d) {
         
+        // Basic mobile detection for performance optimization
+        const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+
         // --- 1. Scene, Camera, Renderer ---
         const scene = new THREE.Scene();
         // Optional subtle fog for depth
         scene.fog = new THREE.FogExp2(0x0a0202, 0.0015);
         
         const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 3000);
-        camera.position.z = 400;
         
-        // Basic mobile detection for performance optimization
-        const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
-
+        // Push camera way back on mobile to fit the wide text into narrow portrait screens
+        camera.position.z = isMobile ? 1000 : 400;
+        
         const renderer = new THREE.WebGLRenderer({ canvas: canvas3d, alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         
@@ -89,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalPositions = new Float32Array(particles);
         geometry.setAttribute('originalPosition', new THREE.BufferAttribute(originalPositions, 3));
         
-        // Compensate for fewer particles on mobile by making them slightly larger
-        const particleSize = isMobile ? 5 : 3;
+        // Compensate for fewer particles (and the camera being further back) on mobile by making them larger
+        const particleSize = isMobile ? 10 : 3;
 
         // Use a nice glowing additive blending material for the points
         const material = new THREE.PointsMaterial({
