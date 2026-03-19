@@ -20,9 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 3000);
         camera.position.z = 400;
         
+        // Basic mobile detection for performance optimization
+        const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+
         const renderer = new THREE.WebGLRenderer({ canvas: canvas3d, alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        // Cap pixel ratio on mobile to drastically save GPU overhead
+        renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1.25) : Math.min(window.devicePixelRatio, 2));
 
         // --- 2. Generate Particles from 2D Canvas offscreen ---
         // We render the text "EARNEST" onto a hidden 2D canvas and sample its pixels to get 3D coords
@@ -47,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const colors = [];
         const color = new THREE.Color();
         
-        // Sampling gap - lower gap = more particles. 4 means every 4th pixel.
-        const gap = 4;
+        // Sampling gap dictates particle count. 
+        // 4 is high-res (desktop), 7 is low-res (perfect for mobile to keep 60fps).
+        const gap = isMobile ? 7 : 4;
         
         for (let y = 0; y < tHeight; y += gap) {
             for (let x = 0; x < tWidth; x += gap) {
@@ -83,9 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalPositions = new Float32Array(particles);
         geometry.setAttribute('originalPosition', new THREE.BufferAttribute(originalPositions, 3));
         
+        // Compensate for fewer particles on mobile by making them slightly larger
+        const particleSize = isMobile ? 5 : 3;
+
         // Use a nice glowing additive blending material for the points
         const material = new THREE.PointsMaterial({
-            size: 3,
+            size: particleSize,
             vertexColors: true,
             transparent: true,
             opacity: 0.9,
