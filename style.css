@@ -96,6 +96,55 @@
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
+
+/* =============================================
+   EVENTS SECTION
+   ============================================= */
+.events {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.events-grid {
+  display: grid;
+  /* User explicitly requested a single row always */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.event-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 204, 0, 0.2);
+  border-color: var(--primary-color);
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .events {
+    padding: 3rem 0;
+  }
+  .events-grid {
+    gap: 1rem;
+  }
+}
+
 /* CSS Variables for theming and easy customization */
 :root {
   /* Color Palette matching red and yellow */
